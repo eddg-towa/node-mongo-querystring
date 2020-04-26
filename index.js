@@ -249,8 +249,8 @@ module.exports.prototype.parse = function parse(query) {
 
     // whitelist
     if (Object.keys(this.whitelist).length && !this.whitelist[key]) {
-      // support for $text search, 'search' key must be whitelisted
-      if (key === 'search') {
+      // support for $text search, 'q' key must be whitelisted
+      if (key === 'q') {
         res.$text = {
           $search: val
         }
